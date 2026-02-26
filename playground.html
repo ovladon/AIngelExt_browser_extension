@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIngelExt Playground</title>
+  <style>
+    :root{--bg:#fff;--fg:#111;--muted:#555;--border:rgba(0,0,0,.14);--shadow:rgba(0,0,0,.18)}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;margin:0;padding:18px;max-width:1050px;background:var(--bg);color:var(--fg)}
+    h1{font-size:18px;margin:0 0 6px}
+    .muted{color:var(--muted);font-size:12px;line-height:1.35}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+    button{padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff;cursor:pointer;font-weight:700}
+    button:hover{background:rgba(0,0,0,.03)}
+    select{padding:10px 12px;border-radius:14px;border:1px solid var(--border);font-size:14px}
+    textarea{width:100%;min-height:280px;box-sizing:border-box;border-radius:16px;border:1px solid var(--border);padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:13px}
+    .card{border:1px solid var(--border);border-radius:16px;padding:14px;background:#fff;box-shadow:0 14px 40px var(--shadow);margin-top:12px}
+    .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pill{border:1px solid var(--border);border-radius:999px;padding:8px 10px;font-weight:800;font-size:12px;background:#fff}
+    pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px;font-size:12px}
+  </style>
+</head>
+<body>
+  <h1>AIngelExt Playground</h1>
+  <div class="muted">
+    Offline page for deterministic testing of detection/redaction (no external sites involved).
+    Paste your test text below, run detection, and compare with what the Input Gate produces on target sites.
+  </div>
+
+  <div class="row">
+    <button id="load">Load synthetic raw test pack</button>
+    <button id="detect">Detect</button>
+    <button id="redactLight">Redact (light)</button>
+    <button id="redactStrict">Redact (strict)</button>
+    <button id="copy">Copy output</button>
+    <div class="muted">Level:</div>
+    <select id="level">
+      <option value="low">low</option>
+      <option value="medium" selected>medium</option>
+      <option value="high">high</option>
+    </select>
+    <div class="muted">Style:</div>
+    <select id="style">
+      <option value="tag" selected>tag</option>
+      <option value="mask">mask</option>
+    </select>
+  </div>
+
+  <textarea id="input" spellcheck="false"></textarea>
+
+  <div class="card">
+    <div><b>Summary</b> <span class="muted" id="meta"></span></div>
+    <div class="pills" id="pills"></div>
+    <div style="margin-top:12px"><b>Output</b></div>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="engine.js"></script>
+  <script src="playground.js"></script>
+</body>
+</html>

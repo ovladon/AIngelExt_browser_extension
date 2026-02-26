@@ -23,7 +23,7 @@ async function inject(tabId) {
   try {
     await chrome.scripting.executeScript({
       target: { tabId, allFrames: true },
-      files: ["injected.js"]
+      files: ["engine.js", "injected.js"]
     });
     return { ok: true };
   } catch (e) {
@@ -32,6 +32,11 @@ async function inject(tabId) {
 }
 
 document.getElementById("options").addEventListener("click", () => chrome.runtime.openOptionsPage());
+
+document.getElementById("playground").addEventListener("click", async () => {
+  const url = chrome.runtime.getURL("playground.html");
+  await chrome.tabs.create({ url });
+});
 
 document.getElementById("ping").addEventListener("click", async () => {
   const tab = await activeTab();

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "AIngelExt (Prototype v0.2.9)",
-  "version": "0.2.9",
-  "description": "Local-first real-time paste & upload safety gate + optional prompt-injection wrapper (plus Gmail output gate).",
+  "name": "AIngelExt",
+  "version": "0.4.5",
+  "description": "Local-first browser extension that helps prevent accidental pasting/uploading of secrets (passwords, API keys, IBANs, emails, etc.) into ChatGPT/Claude/search pages, and adds a safety confirmation before sending emails in Gmail Web.",
   "permissions": [
     "activeTab",
     "scripting",
@@ -41,6 +41,7 @@
         "https://kagi.com/*"
       ],
       "js": [
+        "engine.js",
         "injected.js"
       ],
       "run_at": "document_idle",
