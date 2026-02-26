@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Toolkit Angel (Prototype v0.2.9)",
+  "version": "0.2.9",
+  "description": "Local-first real-time paste & upload safety gate + optional prompt-injection wrapper (plus Gmail output gate).",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://claude.ai/*",
+    "https://mail.google.com/*",
+    "https://www.google.com/*",
+    "https://www.bing.com/*",
+    "https://duckduckgo.com/*",
+    "https://search.brave.com/*",
+    "https://you.com/*",
+    "https://www.perplexity.ai/*",
+    "https://kagi.com/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://mail.google.com/*",
+        "https://www.google.com/*",
+        "https://www.bing.com/*",
+        "https://duckduckgo.com/*",
+        "https://search.brave.com/*",
+        "https://you.com/*",
+        "https://www.perplexity.ai/*",
+        "https://kagi.com/*"
+      ],
+      "js": [
+        "injected.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "Toolkit Angel",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
