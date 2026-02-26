@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Toolkit Angel (Prototype v0.2.9)",
+  "name": "AIngelExt (Prototype v0.2.9)",
   "version": "0.2.9",
   "description": "Local-first real-time paste & upload safety gate + optional prompt-injection wrapper (plus Gmail output gate).",
   "permissions": [
@@ -48,7 +48,7 @@
     }
   ],
   "action": {
-    "default_title": "Toolkit Angel",
+    "default_title": "AIngelExt",
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
