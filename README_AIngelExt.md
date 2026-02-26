@@ -2,8 +2,6 @@
 
 Local-first safety gates for LLM workflows in the browser: intercept **paste** and **file uploads** on common AI/chat/search sites, optionally **wrap untrusted data to reduce prompt-injection risk**, and add a lightweight **Gmail “Output Gate”** before sending.
 
-> Note: this codebase currently displays **“Toolkit Angel (Prototype v0.2.9)”** in the UI/manifest. If you want the visible name to be **AIngelExt**, update `manifest.json` (`name`, `action.default_title`) and `popup.html`/`options.html` titles.
-
 ## What it does
 
 ### 1) Input Gate (paste)
