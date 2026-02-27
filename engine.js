@@ -181,8 +181,10 @@
   const RX = {
     email: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/ig,
 
-    // Phone: requires either +country OR separators; avoids long contiguous digit blobs.
+    // Phone (formatted): requires separators.
     phone: /(?:\+\d{1,3}[\s-]?)?(?:\(?\d{2,4}\)?[\s-]?)?\d{3}[\s-]\d{3,4}\b/g,
+    // Phone (compact): contiguous digits (e.g., 1723123456). Validated to avoid cards/CNP.
+    phone_compact: /\b\d{9,15}\b/g,
 
     // IBAN rough match; validated via mod-97.
     iban: /\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b/ig,
@@ -414,6 +416,8 @@
       spans.push(...scanAll(raw, 'card', RX.card, 72, validateCard));
       spans.push(...scanAll(raw, 'email', RX.email, 60));
       spans.push(...scanAll(raw, 'phone', RX.phone, 58, validatePhone));
+      // Compact digit-only phones (e.g., 1723123456)
+      spans.push(...scanAll(raw, 'phone', RX.phone_compact, 57, validatePhone));
     } else {
       spans.push(...scanAll(raw, 'email', RX.email, 60));
     }
@@ -482,8 +486,9 @@
     }
 
 
-    // Obfuscation detection (medium/high): spaced email / spaced iban / split keys.
-    if (level !== 'low') {
+    // Obfuscation detection (strict/high only): spaced email / spaced IBANs / split keys.
+    // This is what makes Redact+ meaningfully stronger than Redact.
+    if (level === 'high') {
       spans.push(...scanAll(raw, 'obfuscated_email', RX.obf_email, 55));
       spans.push(...scanAll(raw, 'obfuscated_iban', RX.obf_iban, 76, (v) => ibanOk(String(v).replace(/\s+/g, ''))));
 

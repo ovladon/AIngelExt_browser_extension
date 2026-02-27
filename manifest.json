@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "AIngelExt",
-  "version": "0.4.5",
-  "description": "Local-first browser extension that helps prevent accidental pasting/uploading of secrets (passwords, API keys, IBANs, emails, etc.) into ChatGPT/Claude/search pages, and adds a safety confirmation before sending emails in Gmail Web.",
+  "version": "0.5.3",
+  "description": "Local-first browser extension that helps prevent accidental pasting/uploading of secrets (passwords, API keys, IBANs, emails, etc.) into web pages, and adds a safety confirmation before sending emails in Gmail Web.",
   "permissions": [
     "activeTab",
     "scripting",
@@ -10,17 +10,7 @@
     "tabs"
   ],
   "host_permissions": [
-    "https://chatgpt.com/*",
-    "https://chat.openai.com/*",
-    "https://claude.ai/*",
-    "https://mail.google.com/*",
-    "https://www.google.com/*",
-    "https://www.bing.com/*",
-    "https://duckduckgo.com/*",
-    "https://search.brave.com/*",
-    "https://you.com/*",
-    "https://www.perplexity.ai/*",
-    "https://kagi.com/*"
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "service_worker.js"
@@ -28,24 +18,15 @@
   "content_scripts": [
     {
       "matches": [
-        "https://chatgpt.com/*",
-        "https://chat.openai.com/*",
-        "https://claude.ai/*",
-        "https://mail.google.com/*",
-        "https://www.google.com/*",
-        "https://www.bing.com/*",
-        "https://duckduckgo.com/*",
-        "https://search.brave.com/*",
-        "https://you.com/*",
-        "https://www.perplexity.ai/*",
-        "https://kagi.com/*"
+        "<all_urls>"
       ],
       "js": [
         "engine.js",
         "injected.js"
       ],
-      "run_at": "document_idle",
-      "all_frames": true
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_origin_as_fallback": true
     }
   ],
   "action": {

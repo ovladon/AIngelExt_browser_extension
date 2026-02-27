@@ -1,7 +1,7 @@
 
 (() => {
   'use strict';
-  const VERSION = "0.4.5";
+  const VERSION = "0.5.3";
   if (window.__AIngelExtInjected) return;
   window.__AIngelExtInjected = true;
 
@@ -9,7 +9,7 @@
 
   try {
     const style = document.createElement("style");
-    style.textContent = "\n:root{--bg:#fff;--fg:#111;--muted:#555;--border:rgba(0,0,0,.14);--shadow:rgba(0,0,0,.25);--accent:#1b75ff;--ok:#00a86b;--warn:#f5a623;--danger:#d64545;}\n.ta-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2147483647;display:flex;align-items:center;justify-content:center;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}\n.ta-modal{width:min(980px,94vw);max-height:88vh;overflow:auto;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:18px;box-shadow:0 22px 70px var(--shadow);padding:18px}\n.ta-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}\n.ta-mark{width:44px;height:44px;border-radius:14px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;user-select:none}\n.ta-title{font-size:22px;font-weight:800;margin:0}\n.ta-sub{color:var(--muted);font-size:14px;line-height:1.25;margin:2px 0 0}\n.ta-body{margin-top:12px}\n.ta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}\n.ta-box{background:rgba(0,0,0,.03);border:1px solid var(--border);border-radius:16px;padding:12px;margin:12px 0}\n.ta-btn{appearance:none;border:1px solid var(--border);background:#fff;color:var(--fg);padding:12px 14px;border-radius:16px;cursor:pointer;font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}\n.ta-btn:hover{background:rgba(0,0,0,.03)}\n.ta-btn.primary{border-color:rgba(27,117,255,.35);background:rgba(27,117,255,.10)}\n.ta-btn.ok{border-color:rgba(0,168,107,.35);background:rgba(0,168,107,.10)}\n.ta-btn.warn{border-color:rgba(245,166,35,.40);background:rgba(245,166,35,.12)}\n.ta-btn.danger{border-color:rgba(214,69,69,.40);background:rgba(214,69,69,.12)}\n.ta-btn.ghost{background:transparent}\n.ta-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;font-size:15px;font-weight:700}\n.ta-pills{display:flex;flex-wrap:wrap;gap:10px}\n.ta-muted{color:var(--muted);font-size:13px;line-height:1.25}\n.ta-bigq{font-size:18px;font-weight:900;margin:0 0 8px}\n.ta-textarea{width:100%;box-sizing:border-box;min-height:180px;border-radius:16px;border:1px solid var(--border);background:#fff;color:var(--fg);padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",monospace;font-size:13px}\n.ta-pre{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",monospace;font-size:13px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px}\n.ta-toast{position:fixed;right:12px;bottom:12px;z-index:2147483647;background:#fff;color:var(--fg);border:1px solid var(--border);border-radius:16px;padding:12px 14px;box-shadow:0 14px 50px rgba(0,0,0,.25);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;font-size:13px;max-width:520px}\n.ta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}\n.ta-item{border:1px solid var(--border);border-radius:16px;padding:12px;background:#fff}\n.ta-item-title{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:850;margin:0 0 6px}\n.ta-kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",monospace;background:rgba(0,0,0,.06);padding:2px 6px;border-radius:8px}\n.ta-toggle{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:14px;font-weight:700}\n.ta-toggle input{transform:scale(1.15)}\n.ta-select,.ta-input{border-radius:14px;border:1px solid var(--border);background:#fff;color:var(--fg);padding:10px 12px;font-size:14px}\n.ta-input{width:100%;box-sizing:border-box}\n";
+    style.textContent = "\n:root{--bg:#fff;--fg:#111;--muted:#555;--border:rgba(0,0,0,.14);--shadow:rgba(0,0,0,.25);--accent:#1b75ff;--ok:#00a86b;--warn:#f5a623;--danger:#d64545;}\n.ta-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2147483647;display:flex;align-items:center;justify-content:center;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}\n.ta-modal{width:min(980px,94vw);max-height:88vh;overflow:auto;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:18px;box-shadow:0 22px 70px var(--shadow);padding:18px}\n.ta-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}\n.ta-mark{width:44px;height:44px;border-radius:14px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;user-select:none}\n.ta-title{font-size:22px;font-weight:800;margin:0}\n.ta-sub{color:var(--muted);font-size:14px;line-height:1.25;margin:2px 0 0}\n.ta-body{margin-top:12px}\n.ta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}\n.ta-box{background:rgba(0,0,0,.03);border:1px solid var(--border);border-radius:16px;padding:12px;margin:12px 0}\n.ta-box.found{background:rgba(245,166,35,.08);border-color:rgba(245,166,35,.32)}\n.ta-box.fixes{background:rgba(27,117,255,.06);border-color:rgba(27,117,255,.26)}\n.ta-details{margin:0}\n.ta-details summary{cursor:pointer;list-style:none;user-select:none;font-weight:900;font-size:18px;display:flex;align-items:center;gap:10px}\n.ta-details summary::-webkit-details-marker{display:none}\n.ta-caret{display:inline-block;transform:rotate(-90deg);transition:transform .12s ease}\n.ta-details[open] .ta-caret{transform:rotate(0deg)}\n.ta-btn{appearance:none;border:1px solid var(--border);background:#fff;color:var(--fg);padding:12px 14px;border-radius:16px;cursor:pointer;font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}\n.ta-btn:hover{background:rgba(0,0,0,.03)}\n.ta-btn.primary{border-color:rgba(27,117,255,.35);background:rgba(27,117,255,.10)}\n.ta-btn.ok{border-color:rgba(0,168,107,.35);background:rgba(0,168,107,.10)}\n.ta-btn.warn{border-color:rgba(245,166,35,.40);background:rgba(245,166,35,.12)}\n.ta-btn.danger{border-color:rgba(214,69,69,.40);background:rgba(214,69,69,.12)}\n.ta-btn.ghost{background:transparent}\n.ta-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;font-size:15px;font-weight:700}\n.ta-pills{display:flex;flex-wrap:wrap;gap:10px}\n.ta-muted{color:var(--muted);font-size:13px;line-height:1.25}\n.ta-bigq{font-size:18px;font-weight:900;margin:0 0 8px}\n.ta-textarea{width:100%;box-sizing:border-box;min-height:180px;border-radius:16px;border:1px solid var(--border);background:#fff;color:var(--fg);padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",monospace;font-size:13px}\n.ta-pre{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",monospace;font-size:13px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px}\n.ta-toast{position:fixed;right:12px;bottom:12px;z-index:2147483647;background:#fff;color:var(--fg);border:1px solid var(--border);border-radius:16px;padding:12px 14px;box-shadow:0 14px 50px rgba(0,0,0,.25);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;font-size:13px;max-width:520px}\n.ta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}\n.ta-item{border:1px solid var(--border);border-radius:16px;padding:12px;background:#fff}\n.ta-item-title{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:850;margin:0 0 6px}\n.ta-kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",monospace;background:rgba(0,0,0,.06);padding:2px 6px;border-radius:8px}\n.ta-toggle{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:14px;font-weight:700}\n.ta-toggle input{transform:scale(1.15)}\n.ta-select,.ta-input{border-radius:14px;border:1px solid var(--border);background:#fff;color:var(--fg);padding:10px 12px;font-size:14px}\n.ta-input{width:100%;box-sizing:border-box}\n.ta-steps{margin:10px 0 0;padding-left:18px}\n.ta-steps li{margin:6px 0;color:var(--muted);font-size:13px;line-height:1.25}\n.ta-stephead{font-weight:850;color:var(--fg);font-size:14px;margin:0 0 6px}\n.ta-steps li .ta-stephead{display:inline;margin-right:6px}\n.ta-help{margin-top:10px}\n.ta-textarea,.ta-pre{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;font-size:14px}\n.ta-pre{background:rgba(0,0,0,.02)}\n.ta-kbd{font-family:inherit}\n\n";
     document.documentElement.appendChild(style);
   } catch {}
 
@@ -18,13 +18,14 @@
   autoEscalate: true,
 
   enableInputGate: true,
+  enableSubmitGate: true,
   autoTriggerInputGate: true,
   autoTriggerInputGateOnType: false,
   autoRedactDefault: "off",
 
   redactStyle: "tag", // tag | mask
 
-  promptInjectionGuard: false,
+  promptInjectionGuard: true,
   guardWrapWithoutModal: false,
 
   enableReasoningGate: true,
@@ -78,10 +79,20 @@
     setTimeout(() => el.remove(), ms);
   }
 
-  function openModal({ title, subtitle, bodyBuilder, mark }) {
+  function openModal({ title, subtitle, bodyBuilder, mark, onClose }) {
     const overlay = document.createElement("div");
     overlay.className = "ta-overlay";
-    overlay.addEventListener("click", (e) => { if (e.target === overlay) overlay.remove(); });
+    overlay.setAttribute("data-aingelex-ui", "1");
+
+    try { window.__AIngelExtModalOpen = true; } catch {}
+
+    const close = () => {
+      try { overlay.remove(); } catch {}
+      try { onClose && onClose(); } catch {}
+      try { window.__AIngelExtModalOpen = false; } catch {}
+    };
+
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
 
     const modal = document.createElement("div");
     modal.className = "ta-modal";
@@ -118,7 +129,7 @@
     overlay.appendChild(modal);
     document.documentElement.appendChild(overlay);
 
-    bodyBuilder(body, () => overlay.remove());
+    bodyBuilder(body, close);
   }
 
   function button(text, cls, onClick) {
@@ -171,21 +182,8 @@
   }
 
   const host = location.host;
-  function isProtectedSite() {
-    return (
-      host.includes("chatgpt.com") ||
-      host.includes("chat.openai.com") ||
-      host.includes("claude.ai") ||
-      host === "mail.google.com" ||
-      host === "www.google.com" ||
-      host === "www.bing.com" ||
-      host === "duckduckgo.com" ||
-      host === "search.brave.com" ||
-      host === "you.com" ||
-      host === "www.perplexity.ai" ||
-      host === "kagi.com"
-    );
-  }
+  /* Coverage: enabled everywhere allowed by the browser. */
+  function isProtectedSite() { return true; }
   function isGmail() { return host === "mail.google.com"; }
 
   // Editable detection
@@ -222,8 +220,9 @@
 
   function findSensitiveHits(text) {
     try {
-      const lvl = String(settings.mode || "medium");
-      const res = window.AIngelExtEngine?.detect(String(text || ""), { level: lvl });
+      // Anti-stupid default: use HIGH detection for gating.
+      // The user doesn't choose levels; the app should just catch leaks.
+      const res = window.AIngelExtEngine?.detect(String(text || ""), { level: "high" });
       return (res && Array.isArray(res.hits)) ? res.hits : [];
     } catch {
       return [];
@@ -332,6 +331,71 @@
 // Perplexity (and some rich editors) may ignore programmatic insertion. Provide replace-all and clipboard fallback.
 let __ta_bypassUntil = 0;
 let __ta_bypassClipboardArmed = false;
+
+
+// One-activation-per-cycle helpers (paste/copy/submit)
+function canonicalizeForHash(str) {
+  try {
+    return String(str || "")
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n")
+      .replace(/[\t ]+\n/g, "\n")
+      .trimEnd();
+  } catch {
+    return String(str || "");
+  }
+}
+
+function hashText(str) {
+  try {
+    const s = canonicalizeForHash(str);
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return (h >>> 0).toString(16);
+  } catch {
+    return "0";
+  }
+}
+
+const __ta_recent = {
+  paste: new Map(),
+  submit: new Map(),
+  copy: new Map()
+};
+
+let __ta_ignoreCopyUntil = 0;
+
+
+function rememberRecent(map, key, ttlMs) {
+  const until = Date.now() + (ttlMs || 0);
+  map.set(String(key || ""), until);
+  // light cleanup
+  if (map.size > 80) {
+    const now = Date.now();
+    for (const [k, v] of map.entries()) {
+      if (v <= now) map.delete(k);
+    }
+  }
+}
+
+function isRecent(map, key) {
+  const k = String(key || "");
+  const until = map.get(k) || 0;
+  if (until && until > Date.now()) return true;
+  if (until) map.delete(k);
+  return false;
+}
+
+function armSkipNextPaste(text, ttlMs) {
+  const s = canonicalizeForHash(text);
+  const h = hashText(s);
+  const hw = "w:" + hashText(String(s).replace(/\s+/g, ""));
+  rememberRecent(__ta_recent.copy, h, ttlMs || 120000);
+  rememberRecent(__ta_recent.copy, hw, ttlMs || 120000);
+}
 
 function replaceAllText(el, value) {
   if (!el) return false;
@@ -442,50 +506,79 @@ function insertTextInto(el, value, caret) {
     return path.some(isEditableEl);
   }
 
-  function openInputGate(rawText, suggestedEl, hits, caretSnapshot) {
+  function openInputGate(rawText, suggestedEl, hits, caretSnapshot, opts = {}) {
     let wrapGuard = (settings.promptInjectionGuard === true);
+    const sourceEvent = String(opts.sourceEvent || "paste");
+
+    const step3Label = String(opts.step3Label || "Paste");
+    const titleText = String(opts.title || "Input Gate");
+    const subtitleText = String(opts.subtitle || ("Instructions: 1) Review  2) Fix  3) " + step3Label + "."));
+    const cancelLabel = String(opts.cancelLabel || "❌ Cancel (do not paste)");
+    const primaryButtonText = String(opts.primaryButtonText || "✅ Paste");
+    const actionShort = String(opts.actionShort || "Paste");
+    const actionHelpName = String(opts.actionHelpName || actionShort);
+    const afterPaste = (typeof opts.afterPaste === "function") ? opts.afterPaste : null;
     let classification = (hits.some(h => { const k = String(h.kind||"").toLowerCase(); return k.includes("key") || k.includes("token") || k.includes("secret") || k.includes("private"); }) ? "Secret" : (hits.length ? "Confidential" : "Internal"));
 
     openModal({
-      title: "Input Gate",
+      title: titleText,
       mark: ICON.input,
-      subtitle: "Before sharing: choose level + quick fix + paste.",
+      subtitle: subtitleText,
+      onClose: () => {
+        try { opts.onClose && opts.onClose(); } catch {}
+        // If a submit attempt triggered this gate, avoid immediate re-trigger storms.
+        try { if (String(opts.sourceEvent || "") === "submit") __ta_submitBypassUntil = Date.now() + 600; } catch {}
+      },
       bodyBuilder: (body, close) => {
         const top = document.createElement("div");
-        top.className = "ta-box";
-        top.innerHTML = `<div class="ta-bigq">🔒 Sensitive data</div><div class="ta-muted">Tap a level (one click), then paste.</div>`;
-        top.appendChild(makePills((hits||[]).map(h=>h.kind)));
+        top.className = "ta-box found";
+
+        const uniqKinds = Array.from(new Set((hits||[]).map(h => String(h.kind || "unknown"))));
+
+        // Collapsed-by-default details for what was found.
+        const details = document.createElement("details");
+        details.className = "ta-details";
+        details.open = false;
+
+        const summary = document.createElement("summary");
+        summary.innerHTML = `<span class="ta-caret">▾</span> 🔒 <b>Sensitive data found:</b> <span class="ta-kbd">${(hits||[]).length}</span> items • <span class="ta-kbd">${uniqKinds.length}</span> types <span class="ta-muted" style="margin-left:8px;font-weight:600">(click to view)</span>`;
+        details.appendChild(summary);
+
+        const inside = document.createElement("div");
+        inside.style.marginTop = "10px";
+        const note = document.createElement("div");
+        note.className = "ta-muted";
+        note.textContent = "Pills show what could leak. You can fix it below.";
+        inside.appendChild(note);
+        inside.appendChild(makePills((hits||[]).map(h=>h.kind)));
+        details.appendChild(inside);
+
+        top.appendChild(details);
+
+        const instrHead = document.createElement("div");
+        instrHead.className = "ta-stephead";
+        instrHead.style.marginTop = "12px";
+        instrHead.textContent = "Instructions:";
+        top.appendChild(instrHead);
+
+        const steps = document.createElement("ol");
+        steps.className = "ta-steps";
+        steps.innerHTML =
+          "<li><span class=\"ta-stephead\">Step 1 — Review</span>Optionally open the <b>Sensitive data found</b> dropdown to see details.</li>" +
+          "<li><span class=\"ta-stephead\">Step 2 — Fix</span>Click <b>Redact</b> (normal) or <b>Redact+</b> (strong, recommended before sharing).</li>" +
+          "<li><span class=\"ta-stephead\">Step 3 — " + step3Label + "</span>Click " + step3Label + ". If something still remains after Redact+, we will jump you to it.</li>";
+        top.appendChild(steps);
+
         body.appendChild(top);
 
-        const level = document.createElement("div");
-        level.className = "ta-box";
-        level.innerHTML = `<div class="ta-bigq">🏷️ Level</div>`;
-        const row = document.createElement("div");
-        row.className = "ta-row";
-        const opts = [
-          { v:"Public", icon:"🌐", cls:"" },
-          { v:"Internal", icon:"🏢", cls:"" },
-          { v:"Confidential", icon:"🔒", cls:"warn" },
-          { v:"Secret", icon:"🛑", cls:"danger" }
-        ];
-        opts.forEach(o => {
-          const b = button(`${o.icon} ${o.v}`, o.cls, () => { classification = o.v; update(); });
-          b.dataset.taLevel = o.v;
-          row.appendChild(b);
-        });
-        function update(){
-          [...row.querySelectorAll("button")].forEach(b=>{
-            const sel = (b.dataset.taLevel === classification);
-            b.style.outline = sel ? "3px solid rgba(27,117,255,.25)" : "none";
-          });
-        }
-        level.appendChild(row);
-        body.appendChild(level);
-        setTimeout(update, 0);
 
         const toggle = document.createElement("label");
         toggle.className = "ta-toggle";
-        toggle.innerHTML = `<input type="checkbox"> 🧱 Wrap as data (anti prompt‑injection)`;
+        toggle.innerHTML = `<input type="checkbox"> 🧱 Anti prompt‑injection: paste as UNTRUSTED data`;
+        const guardHelp = document.createElement("div");
+        guardHelp.className = "ta-muted";
+        guardHelp.textContent = "Recommended when pasting any long text: it adds a safety wrapper so the AI treats the pasted block as untrusted data (prevents prompt injection).";
+        body.appendChild(guardHelp);
         const cb = toggle.querySelector("input");
         cb.checked = wrapGuard;
         cb.addEventListener("change", () => { wrapGuard = cb.checked; });
@@ -508,7 +601,7 @@ function insertTextInto(el, value, caret) {
           __lastRemainSpans = [];
           remainBox.style.display = "none";
           remainBox.innerHTML = "";
-          try { bPaste.textContent = "✅ Paste"; } catch {}
+          try { bPaste.textContent = primaryButtonText; } catch {}
         }
 
         function jumpToSpan(span) {
@@ -535,7 +628,7 @@ function insertTextInto(el, value, caret) {
 
           const p = document.createElement("div");
           p.className = "ta-muted";
-          p.textContent = "Click Paste again to proceed anyway, or edit/redact more. Use the buttons below to jump to each remaining item.";
+          p.textContent = `Click ${actionShort} again to proceed anyway, or edit/redact more. Use the buttons below to jump to each remaining item.`;
           remainBox.appendChild(p);
 
           remainBox.appendChild(makePills(uniq));
@@ -552,7 +645,7 @@ function insertTextInto(el, value, caret) {
           }
           remainBox.appendChild(list);
 
-          try { bPaste.textContent = "✅ Paste (confirm)"; } catch {}
+          try { bPaste.textContent = primaryButtonText + " (confirm)"; } catch {}
           setTimeout(() => jumpToSpan(__lastRemainSpans[0]), 0);
         }
 
@@ -564,30 +657,21 @@ function insertTextInto(el, value, caret) {
 
         let redactMode = "off";   // off | light | strict (mutually exclusive)
         let rolesOn = false;
-        let shortenOn = false;
-
-        function shortenText(t) {
-          const s = String(t || "");
-          const head = s.slice(0, 900);
-          return head + (s.length > 900 ? "\n\n[shortened]" : "");
-        }
 
         function recompute() {
           let v = baseText;
           if (rolesOn) v = roleAnonymize(v);
           if (redactMode !== "off") v = redact(v, redactMode);
-          if (shortenOn) v = shortenText(v);
           ta.value = v;
           try { clearRemain(); } catch {}
         }
 
-        // Track manual edits: if the user edits the textarea while any transform is active,
-        // treat the edited text as the new base and reset toggles (so we never overwrite user edits).
+        // If the user edits the text while any quick-fix is active,
+        // treat the edited text as the new base and reset quick-fixes (we never overwrite user edits).
         ta.addEventListener("input", () => {
-          if (rolesOn || shortenOn || redactMode !== "off") {
+          if (rolesOn || redactMode !== "off") {
             baseText = ta.value;
             rolesOn = false;
-            shortenOn = false;
             redactMode = "off";
             updateButtons();
           } else {
@@ -597,6 +681,19 @@ function insertTextInto(el, value, caret) {
         });
 
         body.appendChild(ta);
+
+        const help = document.createElement("div");
+        help.className = "ta-box fixes ta-help";
+        help.innerHTML =
+          `<div class="ta-bigq">Quick fixes (what they do)</div>` +
+          `<div class="ta-muted">` +
+          `🟡 <b>Redact</b>: redacts obvious sensitive items in normal formats (emails, phones, IBANs, cards, keys, tokens).<br>` +
+          `🔴 <b>Redact+</b>: stronger (recommended before sharing). Also catches <b>obfuscation</b> (spaced-out emails, split keys) and extra identifiers (cookies/JWT/IP/ID fields).<br>` +
+          `👤 <b>Hide names</b>: replaces person names with neutral placeholders like <span class="ta-kbd">[PERSON_1]</span>.<br>` +
+          `✅ <b>${actionHelpName}</b>: applies the current text into the page (or copies it to clipboard if insertion is blocked).` +
+          `</div>`;
+
+        body.appendChild(help);
 
         const actions = document.createElement("div");
         actions.className = "ta-row";
@@ -615,37 +712,30 @@ function insertTextInto(el, value, caret) {
           updateButtons();
         });
 
-        const bRoles = button("👤 Names→roles", "", () => {
+        const bRoles = button("👤 Hide names", "", () => {
           rolesOn = !rolesOn;
           recompute();
           updateButtons();
         });
 
-        const bShorten = button("✂️ Shorten", "", () => {
-          shortenOn = !shortenOn;
-          recompute();
-          updateButtons();
-        });
 
         function updateButtons() {
           const onOutline = "3px solid rgba(27,117,255,.25)";
           bRedact.style.outline = (redactMode === "light") ? onOutline : "none";
           bRedactStrict.style.outline = (redactMode === "strict") ? onOutline : "none";
           bRoles.style.outline = rolesOn ? onOutline : "none";
-          bShorten.style.outline = shortenOn ? onOutline : "none";
         }
 
         actions.appendChild(bRedact);
         actions.appendChild(bRedactStrict);
         actions.appendChild(bRoles);
-        actions.appendChild(bShorten);
 
-        actions.appendChild(button("❌ Cancel", "ghost", () => {
-          logEvent({ type: "input_gate_cancel", classification, hits: (hits||[]).map(h=>h.kind) });
+        actions.appendChild(button(cancelLabel, "ghost", () => {
+          logEvent({ type: "input_gate_cancel", sourceEvent, classification, hits: (hits||[]).map(h=>h.kind) });
           close();
         }));
 
-        bPaste = button("✅ Paste", "ok", () => {
+        bPaste = button(primaryButtonText, "ok", () => {
           const rawValue = String(ta.value || "");
 
           // Safety net (Redact+): rescan in HIGH mode.
@@ -656,7 +746,7 @@ function insertTextInto(el, value, caret) {
               const remainSpans = (res2 && Array.isArray(res2.spans)) ? res2.spans : [];
               if (remainSpans.length) {
                 showRemain(remainSpans);
-                logEvent({ type: "input_gate_rescan_found", remain: Array.from(new Set(remainSpans.map(s => String(s.kind || "unknown")))) });
+                logEvent({ type: "input_gate_rescan_found", sourceEvent, remain: Array.from(new Set(remainSpans.map(s => String(s.kind || "unknown")))) });
                 return;
               }
             } catch {}
@@ -670,12 +760,15 @@ function insertTextInto(el, value, caret) {
           if (caretSnapshot && caretSnapshot.__ta_replaceAll) ok = setElementText(el, value);
           else ok = insertTextInto(el, value, caretSnapshot || lastCaret);
           if (!ok) {
-            navigator.clipboard?.writeText(value).catch(()=>{});
-            toast("<b>AIngelExt</b>: safe text copied. Press Ctrl+V.", 2200);
+            try { clipboardFallback(value); } catch {
+              navigator.clipboard?.writeText(value).catch(()=>{});
+              toast("<b>AIngelExt</b>: safe text copied. Press Ctrl+V.", 2200);
+            }
           }
 
-          logEvent({ type: "input_gate_paste", classification, wrapGuard, hits: (hits||[]).map(h=>h.kind), transforms: {redactMode, rolesOn, shortenOn, rescanOverride: __rescanOverride} });
+          logEvent({ type: "input_gate_paste", sourceEvent, classification, wrapGuard, hits: (hits||[]).map(h=>h.kind), transforms: {redactMode, rolesOn, rescanOverride: __rescanOverride} });
           close();
+          if (ok && afterPaste) { try { afterPaste(); } catch {} }
         });
         actions.appendChild(bPaste);
 
@@ -709,6 +802,23 @@ function getEditableFromEvent(evt) {
 
 function elementIsLive(el) {
   try { return !!(el && document.contains(el)); } catch { return false; }
+}
+
+function isInAIngelUI(evtOrNode) {
+  try {
+    const node = (evtOrNode && evtOrNode.target) ? evtOrNode.target : evtOrNode;
+    const path = (evtOrNode && typeof evtOrNode.composedPath === "function") ? evtOrNode.composedPath() : null;
+    const arr = path || (node ? [node] : []);
+    for (const n of arr) {
+      if (!n || n.nodeType !== 1) continue;
+      if (n.getAttribute && n.getAttribute("data-aingelex-ui") === "1") return true;
+      if (n.classList && n.classList.contains("ta-overlay")) return true;
+    }
+    if (node && node.closest) {
+      if (node.closest(".ta-overlay,[data-aingelex-ui=\"1\"]")) return true;
+    }
+  } catch {}
+  return false;
 }
 
 function findBestEditable() {
@@ -767,7 +877,7 @@ function attachPasteGate() {
         __ta_typeLastAt.set(el, now);
 
         // Replace-all mode: treat the whole composed message as the artifact for gating.
-        openInputGate(raw, el, hits, { __ta_replaceAll: true });
+        openInputGate(raw, el, hits, { __ta_replaceAll: true }, { sourceEvent: "type" });
       } catch (e) {
         console.warn("[AIngelExt] type-gate error", e);
       }
@@ -789,6 +899,9 @@ function attachPasteGate() {
 
 document.addEventListener("paste", (evt) => {
       try {
+        if (isInAIngelUI(evt)) return;
+        if (window.__AIngelExtModalOpen) return;
+
         if (settings.enableInputGate === false) return;
         if (settings.autoTriggerInputGate === false) return;
         if (!isEditablePaste(evt)) return;
@@ -796,6 +909,24 @@ document.addEventListener("paste", (evt) => {
         const raw = (evt.clipboardData || window.clipboardData)?.getData("text") || "";
         // If we just armed clipboard fallback, let the next user paste go through unmodified.
         if (__ta_bypassClipboardArmed && Date.now() < __ta_bypassUntil) { __ta_bypassClipboardArmed = false; return; }
+        // One activation per copy→paste cycle: if this exact text was just produced by our Copy/Hypothesis/Copy+trace buttons, don't warn again.
+        const __ta_h = hashText(raw);
+        const __ta_hw = "w:" + hashText(canonicalizeForHash(raw).replace(/\s+/g, ""));
+        // One activation per copy→paste cycle: if this exact text (or whitespace-variant) was just produced by our Copy/Hypothesis/Copy+trace buttons, don't warn again.
+        if (isRecent(__ta_recent.copy, __ta_h) || isRecent(__ta_recent.copy, __ta_hw)) {
+          rememberRecent(__ta_recent.paste, __ta_h, 8000);
+          rememberRecent(__ta_recent.paste, __ta_hw, 8000);
+          return;
+        }
+        // If this text was just handled by the Submit Gate, don't nag again on paste.
+        if (isRecent(__ta_recent.submit, __ta_h) || isRecent(__ta_recent.submit, __ta_hw)) {
+          rememberRecent(__ta_recent.paste, __ta_h, 8000);
+          rememberRecent(__ta_recent.paste, __ta_hw, 8000);
+          return;
+        }
+        // Avoid re-opening the same gate repeatedly for the same pasted text within a short window.
+        if (isRecent(__ta_recent.paste, __ta_h) || isRecent(__ta_recent.paste, __ta_hw)) return;
+
         if (!raw) return;
 
         const active = getEditableFromEvent(evt);
@@ -819,7 +950,10 @@ document.addEventListener("paste", (evt) => {
           // Critical: block site handlers (Perplexity uses its own paste handler).
           hardBlockPaste(evt);
 
-          openInputGate(raw, active, hits, caretSnapshot);
+          rememberRecent(__ta_recent.paste, __ta_h, 8000);
+          rememberRecent(__ta_recent.paste, __ta_hw, 8000);
+
+          openInputGate(raw, active, hits, caretSnapshot, { sourceEvent: "paste" });
           return;
         }
 
@@ -841,6 +975,248 @@ document.addEventListener("paste", (evt) => {
       }
     }, true);
   }
+
+
+// --- Submit Gate (catch typed secrets before submit/send/search) ---
+let __ta_submitBypassUntil = 0;
+
+function stopEvent(evt) {
+  try {
+    evt.preventDefault();
+    evt.stopPropagation();
+    if (typeof evt.stopImmediatePropagation === "function") evt.stopImmediatePropagation();
+  } catch {}
+}
+
+function editableTextValue(el) {
+  try {
+    if (!el) return "";
+    if (el.tagName === "TEXTAREA" || (el.tagName === "INPUT" && isTextLikeInput(el))) return String(el.value || "");
+    if (el.isContentEditable) return String(el.innerText || el.textContent || "");
+  } catch {}
+  return "";
+}
+
+function clickCandidateFromEvent(evt) {
+  try {
+    const path = (typeof evt.composedPath === "function") ? evt.composedPath() : [];
+    for (const n of path) {
+      if (!n || !n.getAttribute) continue;
+      const tag = (n.tagName || "").toLowerCase();
+      if (tag === "button" || tag === "a") return n;
+      if (tag === "input") {
+        const t = (n.getAttribute("type") || "").toLowerCase();
+        if (["submit","button"].includes(t)) return n;
+      }
+      const role = (n.getAttribute("role") || "").toLowerCase();
+      if (role === "button") return n;
+    }
+  } catch {}
+  return null;
+}
+
+function labelFor(el) {
+  if (!el) return "";
+  const parts = [
+    el.getAttribute("aria-label") || "",
+    el.getAttribute("data-tooltip") || "",
+    el.getAttribute("title") || "",
+    (el.textContent || "")
+  ].map(s => String(s).trim()).filter(Boolean);
+  return parts.join(" ").replace(/\s+/g, " ").trim();
+}
+
+function isLikelySubmitControl(el) {
+  if (!el) return false;
+  const tag = (el.tagName || "").toLowerCase();
+  if (tag === "input") {
+    const t = (el.getAttribute("type") || "").toLowerCase();
+    if (t === "submit") return true;
+  }
+  if (tag === "button") {
+    const t = (el.getAttribute("type") || "").toLowerCase();
+    if (!t || t === "submit") return true;
+  }
+  const lab = labelFor(el).toLowerCase();
+  if (/\b(send|submit|search|go|post|upload|continue)\b/.test(lab)) return true;
+  return false;
+}
+
+function inferVerb(el, submitEl, form) {
+  const lab = labelFor(submitEl).toLowerCase();
+  if (lab.includes("search")) return "Search";
+  if (lab.includes("send")) return "Send";
+  if (lab.includes("upload")) return "Upload";
+  if (lab.includes("post")) return "Post";
+  if (el && el.tagName === "INPUT") {
+    const t = (el.getAttribute("type") || "").toLowerCase();
+    if (t === "search") return "Search";
+  }
+  try {
+    const role = (form && form.getAttribute) ? String(form.getAttribute("role") || "").toLowerCase() : "";
+    if (role === "search") return "Search";
+  } catch {}
+  return "Submit";
+}
+
+function openSubmitInputGate({ el, verb, proceedFn }) {
+  const raw = editableTextValue(el);
+  if (!raw || raw.trim().length < 1) return false;
+
+  const hits = findSensitiveHits(raw);
+  if (!hits.length) return false;
+
+  const __ta_h = hashText(raw);
+  const __ta_hw = "w:" + hashText(canonicalizeForHash(raw).replace(/\s+/g, ""));
+  if (isRecent(__ta_recent.copy, __ta_h) || isRecent(__ta_recent.copy, __ta_hw) ||
+      isRecent(__ta_recent.paste, __ta_h) || isRecent(__ta_recent.paste, __ta_hw) ||
+      isRecent(__ta_recent.submit, __ta_h) || isRecent(__ta_recent.submit, __ta_hw)) return false;
+  rememberRecent(__ta_recent.submit, __ta_h, 12000);
+  rememberRecent(__ta_recent.submit, __ta_hw, 12000);
+
+  openInputGate(raw, el, hits, { __ta_replaceAll: true }, {
+    sourceEvent: "submit",
+    title: "Input Gate",
+    subtitle: `Instructions: 1) Review  2) Fix  3) ${verb}.`,
+    step3Label: verb,
+    actionShort: "Apply",
+    actionHelpName: "Apply",
+    primaryButtonText: `✅ Apply & ${verb.toLowerCase()}`,
+    cancelLabel: `❌ Cancel (do not ${verb.toLowerCase()})`,
+    afterPaste: () => {
+      __ta_submitBypassUntil = Date.now() + 2000;
+      try { proceedFn && proceedFn(); } catch {}
+    }
+  });
+  return true;
+}
+
+function findPrimaryFieldInForm(form) {
+  try {
+    const active = document.activeElement;
+    if (isEditableEl(active) && form && form.contains(active)) return active;
+    const cands = [...form.querySelectorAll("textarea,input,[contenteditable='true']")]
+      .filter(el => isEditableEl(el));
+    for (let i = cands.length - 1; i >= 0; i--) {
+      const v = editableTextValue(cands[i]).trim();
+      if (v.length) return cands[i];
+    }
+    return cands.length ? cands[cands.length - 1] : null;
+  } catch {}
+  return null;
+}
+
+function attachSubmitGate() {
+  if (!isProtectedSite()) return;
+
+  // Form submits (search bars, many chat apps)
+  document.addEventListener("submit", (evt) => {
+    try {
+      if (isInAIngelUI(evt)) return;
+      if (window.__AIngelExtModalOpen) return;
+
+      if (settings.enableSubmitGate === false) return;
+      if (settings.enableInputGate === false) return;
+      if (Date.now() < __ta_submitBypassUntil) return;
+
+      const form = evt.target;
+      if (!form || !form.querySelector) return;
+      if (form.__ta_submitBypassNext) { form.__ta_submitBypassNext = false; return; }
+
+      const field = findPrimaryFieldInForm(form);
+      if (!field) return;
+
+      const verb = inferVerb(field, null, form);
+
+      const proceedFn = () => {
+        try {
+          form.__ta_submitBypassNext = true;
+          if (typeof form.requestSubmit === "function") form.requestSubmit();
+          else form.submit();
+        } catch {}
+      };
+
+      const opened = openSubmitInputGate({ el: field, verb, proceedFn });
+      if (!opened) return;
+
+      stopEvent(evt);
+    } catch (e) { console.warn("[AIngelExt] submit gate error", e); }
+  }, true);
+
+  // Clicks on send/search/submit buttons
+  document.addEventListener("click", (evt) => {
+    try {
+      if (isInAIngelUI(evt)) return;
+      if (window.__AIngelExtModalOpen) return;
+
+      if (settings.enableSubmitGate === false) return;
+      if (settings.enableInputGate === false) return;
+      if (Date.now() < __ta_submitBypassUntil) return;
+
+      const el = clickCandidateFromEvent(evt);
+      if (!el) return;
+      if (el.__ta_submitBypassNext) { el.__ta_submitBypassNext = false; return; }
+
+      // Gmail send is handled by Output Gate
+      if (isGmail()) {
+        const l = labelFor(el).toLowerCase();
+        if (l === "send" || l.startsWith("send")) return;
+      }
+
+      if (!isLikelySubmitControl(el)) return;
+
+      const active = findTextEditableElement();
+      if (!active) return;
+
+      const form = active.closest ? active.closest("form") : null;
+      const verb = inferVerb(active, el, form);
+
+      const proceedFn = () => {
+        try { el.__ta_submitBypassNext = true; } catch {}
+        try { el.click(); } catch {}
+      };
+
+      const opened = openSubmitInputGate({ el: active, verb, proceedFn });
+      if (!opened) return;
+
+      stopEvent(evt);
+    } catch (e) { console.warn("[AIngelExt] submit-click gate error", e); }
+  }, true);
+
+  // Enter in INPUT fields (some pages submit via key handlers)
+  document.addEventListener("keydown", (evt) => {
+    try {
+      if (isInAIngelUI(evt)) return;
+      if (window.__AIngelExtModalOpen) return;
+
+      if (settings.enableSubmitGate === false) return;
+      if (settings.enableInputGate === false) return;
+      if (Date.now() < __ta_submitBypassUntil) return;
+      if (evt.key !== "Enter" || evt.shiftKey || evt.altKey || evt.ctrlKey || evt.metaKey) return;
+
+      const t = evt.target;
+      if (!(t && t.tagName === "INPUT" && isTextLikeInput(t))) return;
+
+      const form = t.form || (t.closest ? t.closest("form") : null);
+      const verb = inferVerb(t, null, form);
+
+      const proceedFn = () => {
+        try {
+          if (form) {
+            form.__ta_submitBypassNext = true;
+            if (typeof form.requestSubmit === "function") form.requestSubmit();
+            else form.submit();
+          }
+        } catch {}
+      };
+
+      const opened = openSubmitInputGate({ el: t, verb, proceedFn });
+      if (!opened) return;
+
+      stopEvent(evt);
+    } catch {}
+  }, true);
+}
 
   // --- File Upload Gate (same as 0.2.7) ---
   const TEXT_EXT = new Set(["txt","md","csv","json","log","yaml","yml","xml"]);
@@ -915,22 +1291,29 @@ document.addEventListener("paste", (evt) => {
   function openFileGate({ source, inputEl, files, results, onAllowOriginal, onApplyMode, onCancel }) {
     const sum = summarizeFileResults(results);
     const title = "File Upload Gate (before you upload)";
-    const subtitle = `Source: ${source} • Files: ${results.length} • Sensitive hits: ${sum.totalHits}`;
+    const subtitle = `Source: ${source} • Files: ${results.length} • Sensitive data found: ${sum.totalHits}`;
 
     openModal({
       title,
       subtitle,
       bodyBuilder: (body, close) => {
         const box = document.createElement("div");
-        box.className = "ta-box";
+        box.className = "ta-box found";
         box.innerHTML = `
-          <div class="ta-kv">
+          <div class="ta-bigq">📎 Sensitive data found: <b>${sum.totalHits}</b></div>
+          <div class="ta-stephead" style="margin-top:6px;">Instructions:</div>
+          <ol class="ta-steps">
+            <li><span class="ta-stephead">Step 1 — Review</span>We can inspect plain-text files only.</li>
+            <li><span class="ta-stephead">Step 2 — Choose</span>Pick <b>Upload with Redact+</b> if the file may contain secrets.</li>
+            <li><span class="ta-stephead">Step 3 — Upload</span>Continue with your choice.</li>
+          </ol>
+          <div class="ta-muted" style="margin-top:8px;">
             Inspectable text files: <b>${sum.inspectableCount}</b> •
             Uninspectable: <b>${sum.uninspectableCount}</b> •
             Too big to inspect: <b>${sum.tooBigCount}</b>
           </div>
           <div class="ta-muted" style="margin-top:6px;">
-            Text inspection supports: .txt .md .csv .json .log .yaml .yml .xml (UTF‑8). Binary formats cannot be inspected.
+            Supported for inspection: .txt .md .csv .json .log .yaml .yml .xml (UTF‑8). Binary formats cannot be inspected.
           </div>
         `;
 
@@ -945,7 +1328,7 @@ document.addEventListener("paste", (evt) => {
           const sizeKB = Math.round(r.size / 1024);
           let status = "uninspectable";
           if (r.inspectable && r.tooBig) status = "too big to inspect";
-          else if (r.inspectable) status = (r.hits && r.hits.length) ? "hits: " + uniq.join(", ") : "no hits";
+          else if (r.inspectable) status = (r.hits && r.hits.length) ? ("found: " + uniq.join(", ")) : "no sensitive data found";
           line.textContent = `${r.name} (${sizeKB} KB) — ${status}`;
           details.appendChild(line);
         }
@@ -977,13 +1360,13 @@ document.addEventListener("paste", (evt) => {
           onAllowOriginal && onAllowOriginal();
         }));
 
-        actions.appendChild(button("Redact (light) + upload", "", () => {
+        actions.appendChild(button("Upload with Redact", "warn", () => {
           logEvent({ type: "file_gate_redact", mode: "light", source, files: results.length, hits: sum.totalHits });
           close();
           onApplyMode && onApplyMode("light");
         }));
 
-        actions.appendChild(button("Redact (strict) + upload", "", () => {
+        actions.appendChild(button("Upload with Redact+", "danger", () => {
           logEvent({ type: "file_gate_redact", mode: "strict", source, files: results.length, hits: sum.totalHits });
           close();
           onApplyMode && onApplyMode("strict");
@@ -1006,39 +1389,72 @@ document.addEventListener("paste", (evt) => {
       const results = await analyzeFiles(files);
       const sum = summarizeFileResults(results);
 
-      openFileGate({
-        source,
-        inputEl,
-        files,
-        results,
-        onCancel: () => {},
-        onAllowOriginal: () => {
-          if (source === "drop" && inputEl) trySetFiles(inputEl, files);
-        },
-        onApplyMode: async (mode) => {
-          const maxBytes = (Number(settings.maxTextFileKB) || 2048) * 1024;
-          const outFiles = [];
-          for (const f of files) {
-            if (isTextFileCandidate(f) && f.size <= maxBytes) {
-              let t = "";
-              try { t = await f.text(); } catch { t = ""; }
-              const red = redact(t, mode);
-              const blob = new Blob([red], { type: f.type || "text/plain" });
-              outFiles.push(new File([blob], f.name, { type: f.type || "text/plain", lastModified: Date.now() }));
-            } else {
-              outFiles.push(f);
-            }
-          }
-          if (!inputEl) {
-            toast("<b>AIngelExt</b>: cannot locate upload input; use the file picker button.", 2200);
-            return;
-          }
-          inputEl.__ta_fileGateBypass = true;
-          const ok = trySetFiles(inputEl, outFiles);
-          inputEl.__ta_fileGateBypass = false;
-          if (!ok) toast("<b>AIngelExt</b>: could not replace files (browser limitation).", 2200);
+      // If the site is currently showing a blocking dialog (common when not logged in),
+      // do not place a full-screen overlay on top of it. Instead, pause and open when
+      // the dialog is gone.
+      const hasBlockingDialog = () => {
+        try {
+          return !!document.querySelector("[role='dialog'][aria-modal='true'], dialog[open], [aria-modal='true']");
+        } catch {
+          return false;
         }
-      });
+      };
+
+      const openWhenSafe = () => {
+        openFileGate({
+          source,
+          inputEl,
+          files,
+          results,
+          onCancel: () => {},
+          onAllowOriginal: () => {
+            if (source === "drop" && inputEl) trySetFiles(inputEl, files);
+          },
+          onApplyMode: async (mode) => {
+            const maxBytes = (Number(settings.maxTextFileKB) || 2048) * 1024;
+            const outFiles = [];
+            for (const f of files) {
+              if (isTextFileCandidate(f) && f.size <= maxBytes) {
+                let t = "";
+                try { t = await f.text(); } catch { t = ""; }
+                const red = redact(t, mode);
+                const blob = new Blob([red], { type: f.type || "text/plain" });
+                outFiles.push(new File([blob], f.name, { type: f.type || "text/plain", lastModified: Date.now() }));
+              } else {
+                outFiles.push(f);
+              }
+            }
+            if (!inputEl) {
+              toast("<b>AIngelExt</b>: cannot locate upload input; use the file picker button.", 2200);
+              return;
+            }
+            inputEl.__ta_fileGateBypass = true;
+            const ok = trySetFiles(inputEl, outFiles);
+            inputEl.__ta_fileGateBypass = false;
+            if (!ok) toast("<b>AIngelExt</b>: could not replace files (browser limitation).", 2200);
+          }
+        });
+      };
+
+      if (hasBlockingDialog()) {
+        // Pause: keep the user's workflow visible. Provide a gentle toast and
+        // open the file gate once the site dialog is dismissed.
+        try { if (inputEl) inputEl.value = ""; } catch {}
+        toast("<b>AIngelExt</b>: Upload paused — please close the site popup first. We'll help you review the file right after.", 2600);
+        const started = Date.now();
+        const maxWaitMs = 12000;
+        const iv = setInterval(() => {
+          if (!hasBlockingDialog()) {
+            clearInterval(iv);
+            openWhenSafe();
+          } else if (Date.now() - started > maxWaitMs) {
+            clearInterval(iv);
+          }
+        }, 250);
+        return;
+      }
+
+      openWhenSafe();
     } catch (e) {
       console.warn("[AIngelExt] file gate error", e);
     }
@@ -1111,11 +1527,19 @@ document.addEventListener("paste", (evt) => {
     return "Trace: " + parts.join("; ") + ".";
   }
 
-  function applyTraceLine(text, trace) {
-    const mode = settings.traceLineMode || "store";
-    if (mode === "off") return text;
-    if (mode === "store") { logEvent({ type: "trace_stored", trace }); return text; }
-    return (String(text || "")) + "\n\n" + trace;
+  function applyTraceLine(text, trace, opts = {}) {
+    const t = String(text || "");
+    const tr = String(trace || "");
+    const forceAppend = !!(opts && opts.forceAppend);
+    const mode = String(settings.traceLineMode || "store");
+    if (forceAppend) {
+      if (tr) logEvent({ type: "trace_appended", trace: tr });
+      return tr ? (t + "\n\n" + tr) : t;
+    }
+    if (mode === "off") return t;
+    if (mode === "store") { if (tr) logEvent({ type: "trace_stored", trace: tr }); return t; }
+    if (tr) logEvent({ type: "trace_appended", trace: tr });
+    return tr ? (t + "\n\n" + tr) : t;
   }
 
   function effectiveMode(text = "") {
@@ -1166,11 +1590,19 @@ document.addEventListener("paste", (evt) => {
     openModal({
       title: "Output Gate",
       mark: ICON.output,
-      subtitle: "Before sending: ✅ Verify / ⚠️ Qualify / ❌ Remove.",
+      subtitle: "Instructions: 1) Review  2) Choose an action  3) Send.",
       bodyBuilder: (body, close) => {
         const top = document.createElement("div");
-        top.className = "ta-box";
-        top.innerHTML = `<div class="ta-bigq">📤 Stop — check what can hurt if wrong</div><div class="ta-muted">Tap each card once and choose ✅ / ⚠️ / ❌.</div>`;
+        top.className = "ta-box fixes";
+        top.innerHTML = `
+          <div class="ta-bigq">📤 Before you send</div>
+          <div class="ta-stephead" style="margin-top:6px;">Instructions:</div>
+          <ol class="ta-steps">
+            <li><span class="ta-stephead">Step 1 — Review</span>Open each card below and read the highlighted text.</li>
+            <li><span class="ta-stephead">Step 2 — Choose</span>Pick ✅ Verify (add a source), ⚠️ Qualify (add a caution), or ❌ Remove.</li>
+            <li><span class="ta-stephead">Step 3 — Send</span>When everything is set, click Send.</li>
+          </ol>
+        `;
         top.appendChild(makePills(items.map(i=>i.kind)));
         body.appendChild(top);
 
@@ -1324,11 +1756,19 @@ document.addEventListener("paste", (evt) => {
     openModal({
       title: "Reasoning Gate",
       mark: ICON.reasoning,
-      subtitle: "Before you trust: copy as hypothesis or add trace.",
+      subtitle: "Instructions: 1) Decide  2) Choose a label  3) Copy.",
       bodyBuilder: (body, close) => {
         const top = document.createElement("div");
-        top.className = "ta-box";
-        top.innerHTML = `<div class="ta-bigq">🧠 Check before believing</div><div class="ta-muted">One tap. Minimal reading.</div>`;
+        top.className = "ta-box fixes";
+        top.innerHTML = `
+          <div class="ta-bigq">🧠 Before you copy</div>
+          <div class="ta-stephead" style="margin-top:6px;">Instructions:</div>
+          <ol class="ta-steps">
+            <li><span class="ta-stephead">Step 1 — Decide</span>If the text contains claims, pick a safe label below.</li>
+            <li><span class="ta-stephead">Step 2 — Add context</span>If you are not sure, use Hypothesis (adds an unverified label).</li>
+            <li><span class="ta-stephead">Step 3 — Copy</span>Copy the version you want.</li>
+          </ol>
+        `;
         top.appendChild(makePills(items.map(i=>i.kind)));
         body.appendChild(top);
 
@@ -1339,32 +1779,78 @@ document.addEventListener("paste", (evt) => {
         pre.className = "ta-pre";
         pre.textContent = text.slice(0, 900) + (text.length > 900 ? "\n…(truncated)" : "");
         prev.appendChild(pre);
-        body.appendChild(prev);
 
-        const actions = document.createElement("div");
+body.appendChild(prev);
+
+const explain = document.createElement("div");
+explain.className = "ta-box";
+explain.innerHTML = `
+  <div class="ta-bigq">What these buttons do</div>
+  <div class="ta-muted">
+    ⏩ <b>Copy (as-is)</b>: copies the text exactly as you selected it.<br>
+    🧪 <b>Hypothesis</b>: adds a clear <b>unverified</b> label at the top (so readers don’t treat it as fact), then adds a short trace line at the bottom.<br>
+    🧾 <b>Copy + trace</b>: keeps the text unchanged, but appends a short footer saying it was AI-assisted.
+  </div>
+`;
+body.appendChild(explain);
+
+const actions = document.createElement("div");
         actions.className = "ta-row";
 
-        const copyToClipboard = async (out) => {
-          try { await navigator.clipboard.writeText(out); toast("<b>AIngelExt</b>: copied.", 1000); return true; }
-          catch { toast("<b>AIngelExt</b>: clipboard blocked.", 1600); return false; }
+        const copyToClipboard = async (out, label) => {
+          const txt = String(out || "");
+          let ok = false;
+          // Try modern Clipboard API first.
+          try {
+            await navigator.clipboard.writeText(txt);
+            ok = true;
+          } catch {}
+
+          // Fallback: execCommand('copy') with a hidden textarea.
+          if (!ok) {
+            try {
+              const tmp = document.createElement("textarea");
+              tmp.value = txt;
+              tmp.setAttribute("readonly", "");
+              tmp.style.position = "fixed";
+              tmp.style.left = "-9999px";
+              tmp.style.top = "0";
+              document.body.appendChild(tmp);
+              tmp.select();
+              __ta_ignoreCopyUntil = Date.now() + 1200;
+              ok = document.execCommand && document.execCommand("copy");
+              tmp.remove();
+            } catch { ok = false; }
+          }
+
+          if (ok) {
+            // One activation per copy→paste cycle: skip the next paste warning for this exact text.
+            armSkipNextPaste(txt, 180000);
+            const msg = label ? `Copied: ${label}.` : "Copied.";
+            toast(`<b>AIngelExt</b>: ${msg}`, 1700);
+            return true;
+          }
+
+          toast("<b>AIngelExt</b>: clipboard blocked by the page/browser.", 1800);
+          return false;
         };
 
         actions.appendChild(button("❌ Cancel", "ghost", close));
-        actions.appendChild(button("⏩ Copy", "", async () => {
-          const ok = await copyToClipboard(text);
+        actions.appendChild(button("⏩ Copy (as-is)", "", async () => {
+          const ok = await copyToClipboard(text, "original text");
           if (ok) logEvent({ type: "reasoning_gate_copy", variant: "asis", items: items.map(i=>i.kind) });
           close();
         }));
-        actions.appendChild(button("🧪 Hypothesis", "warn", async () => {
+        actions.appendChild(button("🧪 Hypothesis (unverified)", "warn", async () => {
           const out = "Unverified (AI output). Treat as hypothesis:\n\n" + text;
-          const traced = applyTraceLine(out, makeTraceLine({ assisted: true, verified: 0, qualified: 1, removed: 0 }));
-          const ok = await copyToClipboard(traced);
+          const traced = applyTraceLine(out, makeTraceLine({ assisted: true, verified: 0, qualified: 1, removed: 0 }), { forceAppend: true });
+          const ok = await copyToClipboard(traced, "hypothesis label + trace");
           if (ok) logEvent({ type: "reasoning_gate_copy", variant: "hypothesis", items: items.map(i=>i.kind) });
           close();
         }));
-        actions.appendChild(button("🧾 Copy + trace", "ok", async () => {
-          const traced = applyTraceLine(text, makeTraceLine({ assisted: true, verified: 0, qualified: 0, removed: 0 }));
-          const ok = await copyToClipboard(traced);
+        actions.appendChild(button("🧾 Copy + trace (AI footer)", "ok", async () => {
+          const traced = applyTraceLine(text, makeTraceLine({ assisted: true, verified: 0, qualified: 0, removed: 0 }), { forceAppend: true });
+          const ok = await copyToClipboard(traced, "trace line added");
           if (ok) logEvent({ type: "reasoning_gate_copy", variant: "trace", items: items.map(i=>i.kind) });
           close();
         }));
@@ -1376,6 +1862,10 @@ document.addEventListener("paste", (evt) => {
 
   document.addEventListener("copy", (evt) => {
     try {
+      if (isInAIngelUI(evt)) return;
+      if (Date.now() < __ta_ignoreCopyUntil) return;
+      if (window.__AIngelExtModalOpen) return;
+
       if (settings.enableReasoningGate === false) return;
       if (selectionInsideEditable()) return;
 
@@ -1434,11 +1924,20 @@ document.addEventListener("paste", (evt) => {
     openModal({
       title: "Action Gate",
       mark: ICON.action,
-      subtitle: "If not undoable: add rollback or 2nd review.",
+      subtitle: "Instructions: 1) Read  2) Confirm  3) Continue.",
       bodyBuilder: (body, close) => {
         const box = document.createElement("div");
-        box.className = "ta-box";
-        box.innerHTML = `<div class="ta-bigq">⏱️ Undoable within 1 hour?</div><div class="ta-muted">Action: <span class="ta-kbd">${lab.slice(0, 120)}</span></div>`;
+        box.className = "ta-box fixes";
+        box.innerHTML = `
+          <div class="ta-bigq">⏱️ Undoable within 1 hour?</div>
+          <div class="ta-muted">Action: <span class="ta-kbd">${lab.slice(0, 120)}</span></div>
+          <div class="ta-stephead" style="margin-top:8px;">Instructions:</div>
+          <ol class="ta-steps">
+            <li><span class="ta-stephead">Step 1 — Read</span>Make sure you understand what will happen.</li>
+            <li><span class="ta-stephead">Step 2 — Confirm</span>If it is not undoable, add a rollback plan or confirm a second-person review.</li>
+            <li><span class="ta-stephead">Step 3 — Continue</span>Click Continue only when ready.</li>
+          </ol>
+        `;
         body.appendChild(box);
 
         const plan = document.createElement("div");
@@ -1565,6 +2064,7 @@ document.addEventListener("paste", (evt) => {
     setTimeout(()=>{ try{ b.style.opacity = '.45'; }catch{} }, 2500);
   } catch {}
   attachPasteGate();
+  attachSubmitGate();
   attachFileUploadGate();
   attachGmailGate();
 })();

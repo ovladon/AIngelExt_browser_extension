@@ -2,7 +2,6 @@ const elInput = document.getElementById('input');
 const elOutput = document.getElementById('output');
 const elPills = document.getElementById('pills');
 const elMeta = document.getElementById('meta');
-const elLevel = document.getElementById('level');
 const elStyle = document.getElementById('style');
 
 const RAW_TEST_PACK = `=== AIngelExt – TEST PACK (SINTETIC / FICTIV) ===
@@ -42,7 +41,7 @@ ATENȚIE: NU înlocui nimic cu date reale.
 - Stripe secret: sk_test_51N0fakeKey1234567890abcdefghijklmnopqrstuv
 - Stripe publishable: pk_test_51N0fakeKey1234567890abcdefghijklmnopqrstuv
 - Google API key-like: AIzaSyD-FAKEKEY_1234567890abcdefghijklmn
-- Slack bot token-like: SLACK_TOKEN_REDACTED
+- Slack bot token-like: s/xoxb-REDACTED/SLACK_TOKEN_REDACTED/g
 - Discord token-like: MTAwMDAwMDAwMDAwMDAwMDAw.GhIjKl.MnOpQrStUvWxYz0123456789ab
 
 [7] JWT / BEARER TOKEN (FICTIV)
@@ -82,9 +81,8 @@ function renderSummary(hits) {
 }
 
 function runDetect() {
-  const level = elLevel.value;
   const t = elInput.value || '';
-  const res = window.AIngelExtEngine.detect(t, { level });
+  const res = window.AIngelExtEngine.detect(t, { level: 'high' });
   renderSummary(res.hits);
   elOutput.textContent = t;
 }
@@ -93,8 +91,7 @@ function runRedact(mode) {
   const style = elStyle.value;
   const t = elInput.value || '';
   const out = window.AIngelExtEngine.redact(t, { mode, style });
-  const lvl = (mode === 'strict') ? 'high' : 'medium';
-  const res = window.AIngelExtEngine.detect(t, { level: lvl });
+  const res = window.AIngelExtEngine.detect(out, { level: 'high' });
   renderSummary(res.hits);
   elOutput.textContent = out;
 }

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIngelExt – Protected New Tab</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🛡️</div>
+        <div>
+          <div class="title">Protected New Tab</div>
+          <div class="subtitle">AIngelExt helps prevent accidental pasting of secrets.</div>
+        </div>
+      </div>
+
+      <label class="label" for="q">Paste or type here</label>
+      <input id="q" class="q" type="text" inputmode="text" autocomplete="off" placeholder="Search the web or open a URL" />
+
+      <div class="row">
+        <button id="go" class="btn primary" type="button">Search</button>
+        <button id="open" class="btn" type="button">Open URL</button>
+      </div>
+
+      <div class="note">
+        <div class="note-title">Notes</div>
+        <ul>
+          <li>If you paste sensitive data, AIngelExt will show an Input Gate with redaction options.</li>
+          <li>Search uses Google by default (you can still use the address bar for your browser’s default search).</li>
+          <li>Browser internal pages (e.g., <code>chrome://</code>, <code>edge://</code>) cannot be protected by any extension.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">AIngelExt v0.4.8 • Local-first • No accounts • No server</div>
+  </main>
+
+  <script src="newtab.js"></script>
+  <!-- Enable the same paste/file gates inside the New Tab override -->
+  <script src="engine.js"></script>
+  <script src="injected.js"></script>
+</body>
+</html>

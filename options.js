@@ -9,7 +9,7 @@ const DEFAULTS = {
 
   redactStyle: "tag", // tag | mask
 
-  promptInjectionGuard: false,
+  promptInjectionGuard: true,
   guardWrapWithoutModal: false,
 
   enableReasoningGate: true,
